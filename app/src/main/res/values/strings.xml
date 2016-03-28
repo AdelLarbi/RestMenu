@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RestMenu</string>
+    <string name="action_settings">Settings</string>
+    <string name="secretCode">Code secret</string>
+    <string name="serverSecretCode">Code secret du serveur</string>
+    <string name="firstCode">Code à 4 chiffres</string>
+    <string name="secondCode">Confirmer le code secret</string>
+    <string name="cancel">Annuler</string>
+    <string name="ok">Ok</string>
+</resources>
