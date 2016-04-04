@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">RestMenu</string>
     <string name="action_settings">Settings</string>
+
+    <string name="settings">Paramètres</string>
+    <string name="general">GÉNÉRAL</string>
+    <string name="selectTableNbr">Choisir le numéro de la table</string>
+    <string name="infoTablesNbr">15 tables</string>
+    <string name="changeSecretCode">Modifier le code secret</string>
+
     <string name="secretCode">Code secret</string>
     <string name="serverSecretCode">Code secret du serveur</string>
     <string name="firstCode">Code à 4 chiffres</string>
