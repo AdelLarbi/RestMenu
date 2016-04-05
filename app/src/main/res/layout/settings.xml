@@ -48,6 +48,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/selectTableNbr"
         android:textSize="28sp"
+        android:onClick="selectTable"
         android:id="@+id/txtvSelectTableNbr" />
 
     <TextView
@@ -77,7 +78,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/changeSecretCode"
         android:textSize="28sp"
+        android:onClick="setCode"
         android:id="@+id/txtvChangeSecretCode" />
+
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"

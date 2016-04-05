@@ -8,10 +8,19 @@
     <string name="infoTablesNbr">15 tables</string>
     <string name="changeSecretCode">Modifier le code secret</string>
 
+    <string name="table">Numéro de la table</string>
+    <string name="setTableNbr">Le numéro de la table</string>
+    <string name="selectTableNbrFromTo">Une table de 1 à 20</string>
+    <string name="CancelTableNbr">Annuler</string>
+    <string name="ScanQr">QR Code</string>
+    <string name="OkTableNbr">Ok</string>
+
     <string name="secretCode">Code secret</string>
-    <string name="serverSecretCode">Code secret du serveur</string>
-    <string name="firstCode">Code à 4 chiffres</string>
-    <string name="secondCode">Confirmer le code secret</string>
-    <string name="cancel">Annuler</string>
-    <string name="ok">Ok</string>
+    <string name="infoServerSecretCode">Code secret du serveur</string>
+    <string name="setTheCode">Code à 4 chiffres</string>
+    <string name="confirmTheCode">Confirmer le code secret</string>
+
+    <string name="title_activity_table_selector">TableSelector</string>
+    <string name="title_activity_secret_code">secretCode</string>
+
 </resources>
