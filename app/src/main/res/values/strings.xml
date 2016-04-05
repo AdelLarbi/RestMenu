@@ -20,6 +20,13 @@
     <string name="setTheCode">Code à 4 chiffres</string>
     <string name="confirmTheCode">Confirmer le code secret</string>
 
+    <string name="txtv1">@string/txtv1</string>
+    <string name="txtv2">@string/txtv2</string>
+    <string name="txtv3">@string/txtv3</string>
+    <string name="txtv4">@string/txtv4</string>
+    <string name="txtv5">@string/txtv5</string>
+    <string name="txtv6">@string/txtv6</string>
+
     <string name="title_activity_table_selector">TableSelector</string>
     <string name="title_activity_secret_code">secretCode</string>
     <string name="title_activity_home">Home</string>
