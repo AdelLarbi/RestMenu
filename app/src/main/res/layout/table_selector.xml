@@ -87,6 +87,7 @@
             android:textColor="@color/white"
             android:textAllCaps="false"
             android:background="@drawable/button_style"
+            android:onClick="goHome"
             android:id="@+id/BtnOkTableNbr" />
     </LinearLayout>
 

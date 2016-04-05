@@ -22,5 +22,6 @@
 
     <string name="title_activity_table_selector">TableSelector</string>
     <string name="title_activity_secret_code">secretCode</string>
+    <string name="title_activity_home">Home</string>
 
 </resources>

@@ -44,4 +44,9 @@ public class TableSelector extends AppCompatActivity {
             }
         }
     }
+
+    public void goHome(View view) {
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
 }
