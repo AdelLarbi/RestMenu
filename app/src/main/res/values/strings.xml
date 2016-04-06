@@ -48,6 +48,12 @@
     <!-- Gallery -->
 
     <!-- Games -->
+    <string name="clashOfClans">Clash Of Clans</string>
+    <string name="limbo">LIMBO</string>
+    <string name="minecraft">Minecraft PE</string>
+    <string name="clashOfClansPkg">com.supercell.clashofclans</string>
+    <string name="limboPkg">com.playdead.limbo.full</string>
+    <string name="minecraftPkg">com.mojang.minecraftpe</string>
 
     <!-- Hours -->
     <string name="hoursList">De lundi à samedi\n12:00 - 16:00\n19:00 - 22:00</string>

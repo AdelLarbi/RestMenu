@@ -1,10 +1,19 @@
 package fr.upmc.ihm.restmenu;
 
+import android.app.Application;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Home extends AppCompatActivity {
 
@@ -27,6 +36,18 @@ public class Home extends AppCompatActivity {
     public void selectGames(View view) {
         Intent intent = new Intent(this, Games.class);
         startActivity(intent);
+
+        /*final PackageManager pm = getPackageManager();
+        List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
+
+        for (ApplicationInfo packageInfo: packages) {
+            Log.i("Home", "Installed Package: " + packageInfo.packageName);
+            Log.i("Home", "Source Dir: " + packageInfo.sourceDir);
+            Log.i("Home", "Launch Activity: " + pm.getLaunchIntentForPackage(packageInfo.packageName));
+        }*/
+
+
+
     }
 
     public void selectHours(View view) {
