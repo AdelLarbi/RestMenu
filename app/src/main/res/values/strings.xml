@@ -24,27 +24,40 @@
     <string name="confirmTheCode">Confirmer le code secret</string>
 
     <!-- Home -->
-    <string name="txtv1">Histoire</string>
-    <string name="txtv2">Galerie</string>
-    <string name="txtv3">Jouer</string>
-    <string name="txtv4">Horaires</string>
-    <string name="txtv5">Commander</string>
-    <string name="txtv6">Contacter</string>
+    <string name="history">Histoire</string>
+    <string name="gallery">Galerie</string>
+    <string name="play">Jouer</string>
+    <string name="hours">Horaires</string>
+    <string name="command">Commander</string>
+    <string name="contact">Contacter</string>
 
     <!-- History -->
-    <string name="history">Histoire</string>
     <string name="ourHistory">Notre histoire</string>
     <string name="ourTeam">Notre équipe</string>
     <string name="cookBook">Livre de recettes</string>
     <string name="ourPassions">Nos passions</string>
     <string name="international">International</string>
     <string name="partnerships">Partenariats</string>
-    <string name="ourHistorySummary">...</string>
-    <string name="ourTeamSummary">...</string>
-    <string name="cookBookSummary">...</string>
-    <string name="ourPassionsSummary">...</string>
-    <string name="internationalSummary">...</string>
-    <string name="partnershipsSummary">...</string>
+    <string name="ourHistorySummary">Bla bla bla...</string>
+    <string name="ourTeamSummary">Bla bla bla...</string>
+    <string name="cookBookSummary">Bla bla bla...</string>
+    <string name="ourPassionsSummary">Bla bla bla...</string>
+    <string name="internationalSummary">Bla bla bla...</string>
+    <string name="partnershipsSummary">Bla bla bla...</string>
+
+    <!-- Gallery -->
+
+    <!-- Games -->
+
+    <!-- Hours -->
+    <string name="hoursList">De lundi à samedi\n12:00 - 16:00\n19:00 - 22:00</string>
+
+    <!-- Command -->
+
+    <!-- Contact -->
+    <string name="adress">8 Résidance de bla bla bla 75000 Paris</string>
+    <string name="phone">(+33) 77 88 99 11</string>
+    <string name="email">rest_mail@gmail.com</string>
 
     <string name="title_activity_table_selector">TableSelector</string>
     <string name="title_activity_secret_code">secretCode</string>
