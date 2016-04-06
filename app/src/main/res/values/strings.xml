@@ -2,12 +2,14 @@
     <string name="app_name">RestMenu</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Settings -->
     <string name="settings">Paramètres</string>
     <string name="general">GÉNÉRAL</string>
     <string name="selectTableNbr">Choisir le numéro de la table</string>
     <string name="infoTablesNbr">15 tables</string>
     <string name="changeSecretCode">Modifier le code secret</string>
 
+    <!-- Table -->
     <string name="table">Numéro de la table</string>
     <string name="setTableNbr">Le numéro de la table</string>
     <string name="selectTableNbrFromTo">Une table de 1 à 20</string>
@@ -15,20 +17,43 @@
     <string name="ScanQr">QR Code</string>
     <string name="OkTableNbr">Ok</string>
 
+    <!-- Secret Code -->
     <string name="secretCode">Code secret</string>
     <string name="infoServerSecretCode">Code secret du serveur</string>
     <string name="setTheCode">Code à 4 chiffres</string>
     <string name="confirmTheCode">Confirmer le code secret</string>
 
-    <string name="txtv1">@string/txtv1</string>
-    <string name="txtv2">@string/txtv2</string>
-    <string name="txtv3">@string/txtv3</string>
-    <string name="txtv4">@string/txtv4</string>
-    <string name="txtv5">@string/txtv5</string>
-    <string name="txtv6">@string/txtv6</string>
+    <!-- Home -->
+    <string name="txtv1">Histoire</string>
+    <string name="txtv2">Galerie</string>
+    <string name="txtv3">Jouer</string>
+    <string name="txtv4">Horaires</string>
+    <string name="txtv5">Commander</string>
+    <string name="txtv6">Contacter</string>
+
+    <!-- History -->
+    <string name="history">Histoire</string>
+    <string name="ourHistory">Notre histoire</string>
+    <string name="ourTeam">Notre équipe</string>
+    <string name="cookBook">Livre de recettes</string>
+    <string name="ourPassions">Nos passions</string>
+    <string name="international">International</string>
+    <string name="partnerships">Partenariats</string>
+    <string name="ourHistorySummary">...</string>
+    <string name="ourTeamSummary">...</string>
+    <string name="cookBookSummary">...</string>
+    <string name="ourPassionsSummary">...</string>
+    <string name="internationalSummary">...</string>
+    <string name="partnershipsSummary">...</string>
 
     <string name="title_activity_table_selector">TableSelector</string>
     <string name="title_activity_secret_code">secretCode</string>
     <string name="title_activity_home">Home</string>
+    <string name="title_activity_hours">Hours</string>
+    <string name="title_activity_history">History</string>
+    <string name="title_activity_gallery">Gallery</string>
+    <string name="title_activity_command">Command</string>
+    <string name="title_activity_contact">Contact</string>
+    <string name="title_activity_games">Games</string>
 
 </resources>

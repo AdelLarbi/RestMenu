@@ -2,10 +2,7 @@ package fr.upmc.ihm.restmenu;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
@@ -15,6 +12,36 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+    }
+
+    public void selectHistory(View view) {
+        Intent intent = new Intent(this, History.class);
+        startActivity(intent);
+    }
+
+    public void selectGallery(View view) {
+        Intent intent = new Intent(this, Gallery.class);
+        startActivity(intent);
+    }
+
+    public void selectGames(View view) {
+        Intent intent = new Intent(this, Games.class);
+        startActivity(intent);
+    }
+
+    public void selectHours(View view) {
+        Intent intent = new Intent(this, Hours.class);
+        startActivity(intent);
+    }
+
+    public void selectCommand(View view) {
+        Intent intent = new Intent(this, Command.class);
+        startActivity(intent);
+    }
+
+    public void selectContact(View view) {
+        Intent intent = new Intent(this, Contact.class);
+        startActivity(intent);
     }
 
     public void goFacebook(View view) {
