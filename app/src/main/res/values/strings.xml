@@ -59,6 +59,12 @@
     <string name="hoursList">De lundi à samedi\n12:00 - 16:00\n19:00 - 22:00</string>
 
     <!-- Command -->
+    <string name="appetizers">Entrées</string>
+    <string name="mains">Plats</string>
+    <string name="desserts">Desserts</string>
+    <string name="beverages">Boissons</string>
+    <string name="teasCoffes">Thés et Cafés</string>
+    <string name="myCommand">Ma commande</string>
 
     <!-- Contact -->
     <string name="adress">8 Résidance de bla bla bla 75000 Paris</string>
