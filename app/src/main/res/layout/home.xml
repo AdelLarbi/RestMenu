@@ -76,7 +76,7 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:src="@android:drawable/ic_dialog_info"
-                    android:background="@drawable/round_button"
+                    android:background="@drawable/round_image_button"
                     android:onClick="selectHistory"/>
 
                 <TextView
@@ -101,7 +101,7 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:src="@android:drawable/ic_dialog_info"
-                    android:background="@drawable/round_button"
+                    android:background="@drawable/round_image_button"
                     android:onClick="selectGallery"/>
 
                 <TextView
@@ -124,7 +124,7 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:src="@android:drawable/ic_dialog_info"
-                    android:background="@drawable/round_button"
+                    android:background="@drawable/round_image_button"
                     android:onClick="selectGames"/>
 
                 <TextView
@@ -155,7 +155,7 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:src="@android:drawable/ic_dialog_info"
-                    android:background="@drawable/round_button"
+                    android:background="@drawable/round_image_button"
                     android:onClick="selectHours"/>
 
                 <TextView
@@ -180,7 +180,7 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:src="@android:drawable/ic_dialog_info"
-                    android:background="@drawable/command_round_button"
+                    android:background="@drawable/command_round_image_button"
                     android:onClick="selectCommand"/>
 
                 <TextView
@@ -203,7 +203,7 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:src="@android:drawable/ic_dialog_info"
-                    android:background="@drawable/round_button"
+                    android:background="@drawable/round_image_button"
                     android:onClick="selectContact"/>
 
                 <TextView
