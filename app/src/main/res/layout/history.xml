@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="45dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/history"
+        android:textSize="35sp"
+        android:textColor="@color/blue1"
+        android:id="@+id/txtvSettings" />
+
+    <!-- Our History -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ourHistory"
+        android:textSize="28sp"
+        android:onClick="selectOurHistory"
+        android:id="@+id/txtvOurHistory" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ourHistorySummary"
+        android:textSize="24sp"
+        android:textColor="@color/grey1"
+        android:id="@+id/txtvOurHistorySummary" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/grey2" />
+
+    <!-- Our Team -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ourTeam"
+        android:textSize="28sp"
+        android:onClick="selectOurTeam"
+        android:id="@+id/txtvOurTeam" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ourTeamSummary"
+        android:textSize="24sp"
+        android:textColor="@color/grey1"
+        android:id="@+id/txtvOurTeamSummary" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/grey2" />
+
+    <!-- CookBook -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/cookBook"
+        android:textSize="28sp"
+        android:onClick="selectCookBook"
+        android:id="@+id/txtvCookBook" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/cookBookSummary"
+        android:textSize="24sp"
+        android:textColor="@color/grey1"
+        android:id="@+id/txtvCookBookSummary" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/grey2" />
+
+    <!-- Our Passions -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ourPassions"
+        android:textSize="28sp"
+        android:onClick="selectOurPassions"
+        android:id="@+id/txtvOurPassions" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ourPassionsSummary"
+        android:textSize="24sp"
+        android:textColor="@color/grey1"
+        android:id="@+id/txtvOurPassionsSummary" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/grey2" />
+
+    <!-- International -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/international"
+        android:textSize="28sp"
+        android:onClick="selectInternational"
+        android:id="@+id/txtvInternational" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/internationalSummary"
+        android:textSize="24sp"
+        android:textColor="@color/grey1"
+        android:id="@+id/txtvInternationalSummary" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/grey2" />
+
+    <!-- Partnerships -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/partnerships"
+        android:textSize="28sp"
+        android:onClick="selectPartnerships"
+        android:id="@+id/txtvPartnerships" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/partnershipsSummary"
+        android:textSize="24sp"
+        android:textColor="@color/grey1"
+        android:id="@+id/txtvPartnershipsSummary" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/grey2" />
+
+</LinearLayout>

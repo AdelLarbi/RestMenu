@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey3">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="45dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/command"
+        android:textSize="35sp"
+        android:textColor="@color/blue1"
+        android:id="@+id/txtvSettings" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="1239dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="40dp"
+        android:layout_weight="0">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="2255dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/command_top_left"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello World !"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/command_top_right"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prix !"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="10dp"
+        android:columnWidth="136dp"
+        android:drawSelectorOnTop="true"
+        android:gravity="center"
+        android:numColumns="auto_fit"
+        android:horizontalSpacing="15dp"
+        android:verticalSpacing="15dp"
+        android:stretchMode="columnWidth"
+        android:focusable="true"
+        android:clickable="true"
+        android:background="@drawable/command_middle"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:text="@string/appetizers"
+            android:background="@drawable/command_bottom"
+            android:id="@+id/button" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:text="@string/mains"
+            android:background="@drawable/command_bottom"
+            android:id="@+id/button2" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:text="@string/desserts"
+            android:background="@drawable/command_bottom"
+            android:id="@+id/button3" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:text="@string/beverages"
+            android:background="@drawable/command_bottom"
+            android:id="@+id/button4" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="300dp"
+            android:text="@string/teasCoffes"
+            android:background="@drawable/command_bottom"
+            android:id="@+id/button5" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:text="@string/myCommand"
+            android:background="@drawable/command_bottom"
+            android:id="@+id/button6" />
+    </LinearLayout>
+
+</LinearLayout>

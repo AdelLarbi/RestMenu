@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="45dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/play"
+        android:textSize="35sp"
+        android:textColor="@color/blue1"
+        android:id="@+id/txtvGames" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:src="@android:drawable/ic_dialog_info"
+                android:background="@drawable/square_image_button"
+                android:tag="@string/clashOfClansPkg"
+                android:onClick="onGameClick"
+                android:id="@+id/clashOfClans"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/clashOfClans"
+                android:textSize="20sp"
+                android:id="@+id/txtvclashOfClans"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="65dp"
+            android:layout_marginLeft="65dp">
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:src="@android:drawable/ic_dialog_info"
+                android:background="@drawable/square_image_button"
+                android:tag="@string/limboPkg"
+                android:onClick="onGameClick"
+                android:id="@+id/limboIcon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/limbo"
+                android:textSize="20sp"
+                android:id="@+id/txtvLimbo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:src="@android:drawable/ic_dialog_info"
+                android:background="@drawable/square_image_button"
+                android:tag="@string/minecraftPkg"
+                android:onClick="onGameClick"
+                android:id="@+id/minecraftIcon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/minecraft"
+                android:textSize="20sp"
+                android:id="@+id/txtvMinecraft" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
