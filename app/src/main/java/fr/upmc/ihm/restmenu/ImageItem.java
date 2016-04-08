@@ -2,9 +2,6 @@ package fr.upmc.ihm.restmenu;
 
 import android.graphics.Bitmap;
 
-/**
- * Created by adel on 07/04/16.
- */
 public class ImageItem {
     private Bitmap image;
     private String title;

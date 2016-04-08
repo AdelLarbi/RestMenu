@@ -65,6 +65,35 @@
     <string name="beverages">Boissons</string>
     <string name="teasCoffes">Thés et Cafés</string>
     <string name="myCommand">Ma commande</string>
+    <string-array name="image_ids">
+        <item>@drawable/image_1</item>
+        <item>@drawable/image_2</item>
+        <item>@drawable/image_3</item>
+        <item>@drawable/image_4</item>
+        <item>@drawable/image_5</item>
+        <item>@drawable/image_6</item>
+        <item>@drawable/image_7</item>
+        <item>@drawable/image_8</item>
+        <item>@drawable/image_9</item>
+        <item>@drawable/image_1</item>
+        <item>@drawable/image_2</item>
+        <item>@drawable/image_3</item>
+        <item>@drawable/image_4</item>
+        <item>@drawable/image_5</item>
+        <item>@drawable/image_6</item>
+        <item>@drawable/image_7</item>
+        <item>@drawable/image_8</item>
+        <item>@drawable/image_9</item>
+        <item>@drawable/image_1</item>
+        <item>@drawable/image_2</item>
+        <item>@drawable/image_3</item>
+        <item>@drawable/image_4</item>
+        <item>@drawable/image_5</item>
+        <item>@drawable/image_6</item>
+        <item>@drawable/image_7</item>
+        <item>@drawable/image_8</item>
+        <item>@drawable/image_9</item>
+    </string-array>
 
     <!-- Contact -->
     <string name="adress">8 Résidance de bla bla bla 75000 Paris</string>
@@ -80,5 +109,6 @@
     <string name="title_activity_command">Command</string>
     <string name="title_activity_contact">Contact</string>
     <string name="title_activity_games">Games</string>
+    <string name="title_activity_detailsActivity">Details Activity</string>
 
 </resources>

@@ -1,5 +1,7 @@
 package fr.upmc.ihm.restmenu;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,17 +11,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+public class GridViewAdapter extends ArrayAdapter<ImageItem> {
 
-/**
- * Created by adel on 07/04/16.
- */
-public class GridViewAdapter extends ArrayAdapter {
     private Context context;
     private int layoutResourceId;
-    private ArrayList data = new ArrayList();
+    private ArrayList<ImageItem> data = new ArrayList<ImageItem>();
 
-    public GridViewAdapter(Context context, int layoutResourceId, ArrayList data) {
+    public GridViewAdapter(Context context, int layoutResourceId, ArrayList<ImageItem> data) {
         super(context, layoutResourceId, data);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
@@ -29,7 +27,7 @@ public class GridViewAdapter extends ArrayAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
-        ViewHolder holder = null;
+        ViewHolder holder;
 
         if (row == null) {
             LayoutInflater inflater = ((Activity) context).getLayoutInflater();
@@ -41,6 +39,7 @@ public class GridViewAdapter extends ArrayAdapter {
         } else {
             holder = (ViewHolder) row.getTag();
         }
+
 
         ImageItem item = data.get(position);
         holder.imageTitle.setText(item.getTitle());
