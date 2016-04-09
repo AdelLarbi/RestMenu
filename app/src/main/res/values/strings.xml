@@ -95,7 +95,7 @@
         <item>@drawable/image_9</item>
     </string-array>
 
-    <!-- Contact -->
+    <!-- Contact2 -->
     <string name="adress">8 Résidance de bla bla bla 75000 Paris</string>
     <string name="phone">(+33) 77 88 99 11</string>
     <string name="email">rest_mail@gmail.com</string>

@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -23,31 +25,53 @@ public class Command extends AppCompatActivity {
 
     private GridView gridView;
     private GridViewAdapter gridAdapter;
+    private ImageButton infoButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.command);
 
+        infoButton = (ImageButton) findViewById(R.id.infoButton);
         gridView = (GridView) findViewById(R.id.gridView);
         gridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, getData());
         gridView.setAdapter(gridAdapter);
 
         gridView.setOnItemClickListener(new OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ImageItem item = (ImageItem) parent.getItemAtPosition(position);
 
-                //Create intent
-                Intent intent = new Intent(Command.this, DetailsActivity.class);
-                intent.putExtra("title", item.getTitle());
-                intent.putExtra("image", item.getImage());
+                long viewId = view.getId();
 
-                //Start details activity
-                startActivity(intent);
+                if (viewId == R.id.infoButton) {
+                    //Create intent
+                    Intent intent = new Intent(Command.this, DetailsActivity.class);
+                    intent.putExtra("title", item.getTitle());
+                    intent.putExtra("image", item.getImage());
+
+                    //Start details activity
+                    startActivity(intent);
+                } else if (viewId == R.id.image) {
+                    Toast.makeText(Command.this, "image!", Toast.LENGTH_LONG).show();
+                } else if (viewId == R.id.text) {
+                    Toast.makeText(Command.this, "text!", Toast.LENGTH_LONG).show();
+                }
             }
         });
+
+        /*infoButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Toast.makeText(Command.this, "YASS!", Toast.LENGTH_LONG).show();
+            }
+        });*/
     }
 
+    public void getInfo(View view) {
+        Intent intent = new Intent(this, DetailsActivity.class);
+        startActivity(intent);
+    }
     /**
      * Prepare some dummy data for gridview
      */

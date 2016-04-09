@@ -30,12 +30,12 @@ public class History extends AppCompatActivity {
     //FIXME goto FIXME 1
     public void selectOurPassions(View view) {
         Intent intent = new Intent(this, History.class);
-    startActivity(intent);
+        startActivity(intent);
     }
     //FIXME goto FIXME 1
     public void selectInternational(View view) {
         Intent intent = new Intent(this, History.class);
-    startActivity(intent);
+        startActivity(intent);
     }
     //FIXME goto FIXME 1
     public void selectPartnerships(View view) {

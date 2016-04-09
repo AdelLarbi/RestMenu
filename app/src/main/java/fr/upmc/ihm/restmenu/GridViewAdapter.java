@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,7 +27,7 @@ public class GridViewAdapter extends ArrayAdapter<ImageItem> {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, final ViewGroup parent) {
         View row = convertView;
         ViewHolder holder;
 
@@ -35,20 +37,46 @@ public class GridViewAdapter extends ArrayAdapter<ImageItem> {
             holder = new ViewHolder();
             holder.imageTitle = (TextView) row.findViewById(R.id.text);
             holder.image = (ImageView) row.findViewById(R.id.image);
+            holder.infoButton = (ImageButton) row.findViewById(R.id.infoButton);
             row.setTag(holder);
         } else {
             holder = (ViewHolder) row.getTag();
         }
 
-
         ImageItem item = data.get(position);
         holder.imageTitle.setText(item.getTitle());
         holder.image.setImageBitmap(item.getImage());
+
+        holder.imageTitle.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                ((GridView) parent).performItemClick(v, position, 0);
+            }
+        });
+
+        holder.image.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                ((GridView) parent).performItemClick(v, position, 0);
+            }
+        });
+
+        holder.infoButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                ((GridView) parent).performItemClick(v, position, 0);
+            }
+        });
+
         return row;
     }
 
     static class ViewHolder {
         TextView imageTitle;
         ImageView image;
+        ImageButton infoButton;
     }
 }
