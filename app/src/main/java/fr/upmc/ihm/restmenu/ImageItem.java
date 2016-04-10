@@ -1,8 +1,6 @@
 package fr.upmc.ihm.restmenu;
 
 import android.graphics.Bitmap;
-import android.view.View;
-import android.widget.TextView;
 
 public class ImageItem {
     private Bitmap image;

@@ -25,19 +25,25 @@
         android:layout_marginBottom="40dp"
         android:layout_weight="0">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="2255dp"
+        <GridView
+            android:layout_width="1100dp"
             android:layout_height="100dp"
             android:layout_marginRight="20dp"
+            android:padding="10dp"
+            android:columnWidth="100dp"
+            android:drawSelectorOnTop="true"
+            android:gravity="center"
+            android:numColumns="auto_fit"
+            android:horizontalSpacing="5dp"
+            android:verticalSpacing="5dp"
+            android:stretchMode="columnWidth"
+            android:focusable="true"
+            android:clickable="true"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:scrollbarAlwaysDrawVerticalTrack="false"
+            android:scrollbars="horizontal"
             android:background="@drawable/command_top_left"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hello World !"/>
-        </LinearLayout>
+            android:id="@+id/gridViewMyCommand"/>
 
         <LinearLayout
             android:orientation="vertical"

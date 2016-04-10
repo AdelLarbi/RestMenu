@@ -13,11 +13,9 @@ import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +24,10 @@ import java.util.ArrayList;
 public class Command extends AppCompatActivity {
 
     private GridView gridView;
+    private GridView gridViewMyCommand;
     private GridViewAdapter gridAdapter;
+    private GridViewMyCommandAdapter gridAdapterMyCommand;
+    private ArrayList<ImageItem> data = new ArrayList<ImageItem>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +35,18 @@ public class Command extends AppCompatActivity {
         setContentView(R.layout.command);
 
         gridView = (GridView) findViewById(R.id.gridView);
+        gridViewMyCommand = (GridView) findViewById(R.id.gridViewMyCommand);
+
         gridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, getData());
+
+        data.add(getData().get(0));
+        data.add(getData().get(1));
+        gridAdapterMyCommand = new GridViewMyCommandAdapter(this, R.layout.grid_mycommand_element, data);
+        data.add(getData().get(2));
+        gridAdapterMyCommand = new GridViewMyCommandAdapter(Command.this, R.layout.grid_mycommand_element, data);
+
         gridView.setAdapter(gridAdapter);
+        gridViewMyCommand.setAdapter(gridAdapterMyCommand);
 
         gridView.setOnItemClickListener(new OnItemClickListener() {
 
@@ -60,6 +71,9 @@ public class Command extends AppCompatActivity {
                     counter++;
                     counterZone.setText(String.valueOf(counter));
                     counterZone.setVisibility(View.VISIBLE);
+                    data.add(getData().get(4));
+                    gridAdapterMyCommand = new GridViewMyCommandAdapter(Command.this, R.layout.grid_mycommand_element, data);
+                    gridViewMyCommand.setAdapter(gridAdapterMyCommand);
                     //Toast.makeText(Command.this, "image!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(Command.this, "Else!", Toast.LENGTH_SHORT).show();
