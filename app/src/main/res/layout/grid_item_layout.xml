@@ -25,13 +25,26 @@
         android:id="@+id/infoButton"/>
 
     <TextView
-        android:id="@+id/text"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/square_image_button"
+        android:text="0"
+        android:textColor="@color/red1"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:id="@+id/counter"/>
+
+    <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:gravity="center"
         android:textSize="12sp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:id="@+id/text"/>
 
 </RelativeLayout>

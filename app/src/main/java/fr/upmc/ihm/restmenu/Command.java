@@ -13,10 +13,12 @@ import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,14 +27,12 @@ public class Command extends AppCompatActivity {
 
     private GridView gridView;
     private GridViewAdapter gridAdapter;
-    private ImageButton infoButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.command);
 
-        infoButton = (ImageButton) findViewById(R.id.infoButton);
         gridView = (GridView) findViewById(R.id.gridView);
         gridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, getData());
         gridView.setAdapter(gridAdapter);
@@ -42,6 +42,8 @@ public class Command extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ImageItem item = (ImageItem) parent.getItemAtPosition(position);
+
+                TextView child = (TextView)parent.getChildAt(position).findViewById(R.id.counter);
 
                 long viewId = view.getId();
 
@@ -53,10 +55,14 @@ public class Command extends AppCompatActivity {
 
                     //Start details activity
                     startActivity(intent);
-                } else if (viewId == R.id.image) {
-                    Toast.makeText(Command.this, "image!", Toast.LENGTH_LONG).show();
-                } else if (viewId == R.id.text) {
-                    Toast.makeText(Command.this, "text!", Toast.LENGTH_LONG).show();
+                } else if (viewId == R.id.image || viewId == R.id.text) {
+                    int counter = item.getCounter();
+                    counter++;
+                    item.setCounter(counter);
+                    child.setVisibility(View.VISIBLE);
+                    Toast.makeText(Command.this, "image!" + item.getCounter(), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(Command.this, "Else!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -68,10 +74,6 @@ public class Command extends AppCompatActivity {
         });*/
     }
 
-    public void getInfo(View view) {
-        Intent intent = new Intent(this, DetailsActivity.class);
-        startActivity(intent);
-    }
     /**
      * Prepare some dummy data for gridview
      */
@@ -81,7 +83,7 @@ public class Command extends AppCompatActivity {
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
             bitmap = ImageConverter.getRoundedCornerBitmap(bitmap, 20.0f);
-            imageItems.add(new ImageItem(bitmap, "Image#" + i));
+            imageItems.add(new ImageItem(bitmap, "Image#" + i, 0));
         }
         return imageItems;
     }
