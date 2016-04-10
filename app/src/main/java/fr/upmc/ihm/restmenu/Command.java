@@ -43,7 +43,7 @@ public class Command extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ImageItem item = (ImageItem) parent.getItemAtPosition(position);
 
-                TextView child = (TextView)parent.getChildAt(position).findViewById(R.id.counter);
+                TextView counterZone = (TextView)parent.getChildAt(position).findViewById(R.id.counter);
 
                 long viewId = view.getId();
 
@@ -56,22 +56,16 @@ public class Command extends AppCompatActivity {
                     //Start details activity
                     startActivity(intent);
                 } else if (viewId == R.id.image || viewId == R.id.text) {
-                    int counter = item.getCounter();
+                    int counter = Integer.parseInt((String)counterZone.getText());
                     counter++;
-                    item.setCounter(counter);
-                    child.setVisibility(View.VISIBLE);
-                    Toast.makeText(Command.this, "image!" + item.getCounter(), Toast.LENGTH_SHORT).show();
+                    counterZone.setText(String.valueOf(counter));
+                    counterZone.setVisibility(View.VISIBLE);
+                    //Toast.makeText(Command.this, "image!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(Command.this, "Else!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-        /*infoButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Toast.makeText(Command.this, "YASS!", Toast.LENGTH_LONG).show();
-            }
-        });*/
     }
 
     /**

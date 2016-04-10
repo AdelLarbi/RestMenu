@@ -26,23 +26,6 @@ public class GridViewAdapter extends ArrayAdapter<ImageItem> {
         TextView imageTitle;
         ImageView image;
         ImageButton infoButton;
-        TextView counterZone;
-    }
-
-    public TextView getTextV() {
-        return holder.imageTitle;
-    }
-
-    public int getCounter() {
-        return Integer.parseInt((String)holder.counterZone.getText());
-    }
-
-    public void setCounter(int counter) {
-        holder.counterZone.setText(String.valueOf(counter));
-    }
-
-    public void zoneCounterVisibility(int visibility) {
-        holder.counterZone.setVisibility(visibility);
     }
 
     public GridViewAdapter(Context context, int layoutResourceId, ArrayList<ImageItem> data) {
@@ -63,7 +46,6 @@ public class GridViewAdapter extends ArrayAdapter<ImageItem> {
             holder.imageTitle = (TextView) row.findViewById(R.id.text);
             holder.image = (ImageView) row.findViewById(R.id.image);
             holder.infoButton = (ImageButton) row.findViewById(R.id.infoButton);
-            holder.counterZone = (TextView) row.findViewById(R.id.counter);
             row.setTag(holder);
         } else {
             holder = (ViewHolder) row.getTag();
@@ -86,11 +68,6 @@ public class GridViewAdapter extends ArrayAdapter<ImageItem> {
             @Override
             public void onClick(View v) {
                 ((GridView) parent).performItemClick(v, position, 0);
-                int i = Integer.parseInt((String) holder.counterZone.getText());
-                i++;
-                holder.counterZone.setText(String.valueOf(i));
-
-                Log.i("Test ", "" + holder.imageTitle.getText());
             }
         });
 
