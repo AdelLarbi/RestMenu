@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="utf-8" ?>
 
-    <item android:drawable="@color/blue1" android:state_pressed="true" />
-    <item android:drawable="@color/blue1" android:state_selected="true" />
-    <item android:drawable="@color/white" />
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:thickness="0dp"
+    android:shape="rectangle">
 
-</selector>
+    <corners android:radius="8dp"/>
+
+    <gradient
+        android:startColor="@color/white2"
+        android:endColor="@color/white2"/>
+
+</shape>

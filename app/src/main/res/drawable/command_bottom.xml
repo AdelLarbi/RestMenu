@@ -9,6 +9,6 @@
         android:bottomLeftRadius="8dp"/>
 
     <gradient
-        android:startColor="@color/white2"
-        android:endColor="@color/white2"/>
+        android:startColor="@color/grey1"
+        android:endColor="@color/grey1"/>
 </shape>

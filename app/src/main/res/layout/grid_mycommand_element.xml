@@ -6,8 +6,8 @@
     android:background="@drawable/grid_color_selector">
 
     <ImageView
-        android:layout_width="92dp"
-        android:layout_height="92dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_centerHorizontal="true"
         android:onClick="setInfoClickListener"
         android:id="@+id/image"/>
@@ -20,18 +20,18 @@
         android:layout_alignParentRight="true"
         android:layout_below="@id/image"
         android:onClick="setInfoClickListener"
-        android:focusable="false"
+        android:focusable="true"
         android:id="@+id/delateButton"/>
 
     <TextView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:background="@drawable/square_image_button"
+        android:background="@drawable/counter_zone"
         android:text="0"
-        android:textColor="@color/red1"
-        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
         android:gravity="center"
         android:visibility="visible"
         android:id="@+id/myCounter"/>
