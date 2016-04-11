@@ -1,6 +1,7 @@
 package fr.upmc.ihm.restmenu;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import android.app.Activity;
 import android.content.Context;
@@ -23,7 +24,7 @@ public class GridViewAdapter extends ArrayAdapter<ImageItem> {
     private  ViewHolder holder;
 
     static class ViewHolder {
-        TextView imageTitle;
+        TextView imagePrice;
         ImageView image;
         ImageButton infoButton;
     }
@@ -47,7 +48,7 @@ public class GridViewAdapter extends ArrayAdapter<ImageItem> {
             LayoutInflater inflater = ((Activity) context).getLayoutInflater();
             row = inflater.inflate(layoutResourceId, parent, false);
             holder = new ViewHolder();
-            holder.imageTitle = (TextView) row.findViewById(R.id.text);
+            holder.imagePrice = (TextView) row.findViewById(R.id.price);
             holder.image = (ImageView) row.findViewById(R.id.image);
             holder.infoButton = (ImageButton) row.findViewById(R.id.infoButton);
             row.setTag(holder);
@@ -56,11 +57,12 @@ public class GridViewAdapter extends ArrayAdapter<ImageItem> {
         }
 
         ImageItem item = data.get(position);
-        holder.imageTitle.setText(item.getTitle());
+        int price = new Random().nextInt(20) + 4;
+        holder.imagePrice.setText(String.valueOf(price) + " €");
         holder.image.setImageBitmap(item.getImage());
         holder.image.setTag(item.getTitle());
 
-        holder.imageTitle.setOnClickListener(new View.OnClickListener() {
+        holder.imagePrice.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {

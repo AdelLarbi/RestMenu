@@ -20,9 +20,12 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.security.PrivateKey;
 import java.util.ArrayList;
 
 public class Command extends AppCompatActivity {
+
+    private TextView priceZone;
 
     private GridView gridView;
     private GridView gridView2;
@@ -44,10 +47,14 @@ public class Command extends AppCompatActivity {
     AdapterView<?> parentGridView;
     AdapterView<?> parentGridViewMyCommand;
 
+    private int price = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.command);
+
+        priceZone = (TextView) findViewById(R.id.globalPrice);
 
         gridView = (GridView) findViewById(R.id.gridView);
         gridView2 = (GridView) findViewById(R.id.gridView2);
@@ -119,6 +126,7 @@ public class Command extends AppCompatActivity {
                 ImageItem item = (ImageItem) parent.getItemAtPosition(position);
 
                 TextView counterZone = (TextView) parent.getChildAt(position).findViewById(R.id.myCounter);
+                TextView thisPriceZone = (TextView) parent.getChildAt(position).findViewById(R.id.price);
 
                 long viewId = view.getId();
 
@@ -128,15 +136,14 @@ public class Command extends AppCompatActivity {
                     if (counter > 1) {
                         counter--;
                         counterZone.setText(String.valueOf(counter));
-
                         decrementCounter(itemtag, counter);
-
                     } else {
                         counter = 0;
                         gridAdapterMyCommand.dataGetter().remove(position);
                         gridViewMyCommand.setAdapter(gridAdapterMyCommand);
                         decrementCounter(itemtag, counter);
                     }
+                    priceZone.setText(String.valueOf(price) + " €");
                 } else {
                     Toast.makeText(Command.this, "Else!", Toast.LENGTH_SHORT).show();
                 }
@@ -151,6 +158,7 @@ public class Command extends AppCompatActivity {
         ImageItem item = (ImageItem) parent.getItemAtPosition(position);
 
         TextView counterZone = (TextView) parent.getChildAt(position).findViewById(R.id.counter);
+        TextView thisPriceZone = (TextView) parent.getChildAt(position).findViewById(R.id.price);
 
         long viewId = view.getId();
 
@@ -164,8 +172,11 @@ public class Command extends AppCompatActivity {
             startActivity(intent);
         } else if (viewId == R.id.image || viewId == R.id.text) {
             int counter = Integer.parseInt((String) counterZone.getText());
+            int thisPrice = Integer.parseInt(((String)thisPriceZone.getText()).split(" ")[0]);
             counter++;
+            price += thisPrice;
             counterZone.setText(String.valueOf(counter));
+            priceZone.setText(String.valueOf(price) + " €");
             counterZone.setVisibility(View.VISIBLE);
 
             fillCart(position, counter, type);
@@ -194,7 +205,6 @@ public class Command extends AppCompatActivity {
     }
 
     private void decrementCounter(String itemTag, int counter) {
-        Toast.makeText(Command.this, "itemTag="+itemTag, Toast.LENGTH_SHORT).show();
         GridViewAdapter myGridAdapter = null;
         if (itemTag.startsWith("a"))
             myGridAdapter = gridAdapter;
@@ -211,6 +221,9 @@ public class Command extends AppCompatActivity {
             if (itemTag.equals(myGridAdapter.dataGetter().get(i).getTag())) {
                 myGridAdapter.dataGetter().get(i).setCounter(counter);
                 TextView counterZoneInPosition = (TextView) parentGridView.getChildAt(i).findViewById(R.id.counter);
+                TextView thisPriceZone = (TextView) parentGridView.getChildAt(i).findViewById(R.id.price);
+                int thisPrice = Integer.parseInt(((String)thisPriceZone.getText()).split(" ")[0]);
+                price -= thisPrice;
                 counterZoneInPosition.setText(String.valueOf(counter));
 
                 if (counter == 0) {
