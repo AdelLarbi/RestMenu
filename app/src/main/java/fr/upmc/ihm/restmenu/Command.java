@@ -10,6 +10,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,6 +25,11 @@ import java.util.ArrayList;
 public class Command extends AppCompatActivity {
 
     private GridView gridView;
+    private GridView gridView2;
+    private GridView gridView3;
+    private GridView gridView4;
+    private GridView gridView5;
+
     private GridView gridViewMyCommand;
     private GridViewAdapter gridAdapter;
     private GridViewMyCommandAdapter gridAdapterMyCommand;
@@ -38,11 +44,21 @@ public class Command extends AppCompatActivity {
         setContentView(R.layout.command);
 
         gridView = (GridView) findViewById(R.id.gridView);
+        gridView2 = (GridView) findViewById(R.id.gridView2);
+        gridView3 = (GridView) findViewById(R.id.gridView3);
+        gridView4 = (GridView) findViewById(R.id.gridView4);
+        gridView5 = (GridView) findViewById(R.id.gridView5);
+
         gridViewMyCommand = (GridView) findViewById(R.id.gridViewMyCommand);
 
         gridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, getData(0));
+        //new RetrieveData().execute();
 
         gridView.setAdapter(gridAdapter);
+        gridView2.setAdapter(gridAdapter);
+        gridView3.setAdapter(gridAdapter);
+        gridView4.setAdapter(gridAdapter);
+        gridView5.setAdapter(gridAdapter);
 
         gridView.setOnItemClickListener(new OnItemClickListener() {
 
@@ -115,6 +131,18 @@ public class Command extends AppCompatActivity {
         });
     }
 
+    class RetrieveData extends AsyncTask<String,String,ArrayList<ImageItem>> {
+
+        @Override
+        protected ArrayList<ImageItem> doInBackground(String... arg0) {
+            return getData(0);
+        }
+
+        protected void onPostExecute(ArrayList<ImageItem> result) {
+            gridAdapter = new GridViewAdapter(Command.this, R.layout.grid_item_layout, result);
+        }
+    }
+
     private void fillCart(int elementPosition, int commandCount) {
         ImageItem item = getData(commandCount).get(elementPosition);
         data.add(item);
@@ -175,6 +203,51 @@ public class Command extends AppCompatActivity {
             imageItems.add(new ImageItem(bitmap, "Image#" + i, counter));
         }
         return imageItems;
+    }
+
+    public void showAppetizers(View view) {
+        gridView.setVisibility(View.VISIBLE);
+
+        gridView2.setVisibility(View.INVISIBLE);
+        gridView3.setVisibility(View.INVISIBLE);
+        gridView4.setVisibility(View.INVISIBLE);
+        gridView5.setVisibility(View.INVISIBLE);
+    }
+
+    public void showMains(View view) {
+        gridView2.setVisibility(View.VISIBLE);
+
+        gridView.setVisibility(View.INVISIBLE);
+        gridView3.setVisibility(View.INVISIBLE);
+        gridView4.setVisibility(View.INVISIBLE);
+        gridView5.setVisibility(View.INVISIBLE);
+    }
+
+    public void showDesserts(View view) {
+        gridView3.setVisibility(View.VISIBLE);
+
+        gridView.setVisibility(View.INVISIBLE);
+        gridView2.setVisibility(View.INVISIBLE);
+        gridView4.setVisibility(View.INVISIBLE);
+        gridView5.setVisibility(View.INVISIBLE);
+    }
+
+    public void showBeverages(View view) {
+        gridView4.setVisibility(View.VISIBLE);
+
+        gridView.setVisibility(View.INVISIBLE);
+        gridView2.setVisibility(View.INVISIBLE);
+        gridView3.setVisibility(View.INVISIBLE);
+        gridView5.setVisibility(View.INVISIBLE);
+    }
+
+    public void showTeasCoffes(View view) {
+        gridView5.setVisibility(View.VISIBLE);
+
+        gridView.setVisibility(View.INVISIBLE);
+        gridView2.setVisibility(View.INVISIBLE);
+        gridView3.setVisibility(View.INVISIBLE);
+        gridView4.setVisibility(View.INVISIBLE);
     }
 }
 
