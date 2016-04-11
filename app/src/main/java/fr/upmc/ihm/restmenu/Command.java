@@ -10,9 +10,9 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -31,7 +31,13 @@ public class Command extends AppCompatActivity {
     private GridView gridView5;
 
     private GridView gridViewMyCommand;
+
     private GridViewAdapter gridAdapter;
+    private GridViewAdapter gridAdapter2;
+    private GridViewAdapter gridAdapter3;
+    private GridViewAdapter gridAdapter4;
+    private GridViewAdapter gridAdapter5;
+
     private GridViewMyCommandAdapter gridAdapterMyCommand;
     private ArrayList<ImageItem> data = new ArrayList<ImageItem>();
 
@@ -51,48 +57,55 @@ public class Command extends AppCompatActivity {
 
         gridViewMyCommand = (GridView) findViewById(R.id.gridViewMyCommand);
 
-        gridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, getData(0));
-        //new RetrieveData().execute();
+        gridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, getData(0, "a"));
+        gridAdapter2 = new GridViewAdapter(this, R.layout.grid_item_layout, getData(0, "m"));
+        gridAdapter3 = new GridViewAdapter(this, R.layout.grid_item_layout, getData(0, "d"));
+        gridAdapter4 = new GridViewAdapter(this, R.layout.grid_item_layout, getData(0, "b"));
+        gridAdapter5 = new GridViewAdapter(this, R.layout.grid_item_layout, getData(0, "t"));
 
         gridView.setAdapter(gridAdapter);
-        gridView2.setAdapter(gridAdapter);
-        gridView3.setAdapter(gridAdapter);
-        gridView4.setAdapter(gridAdapter);
-        gridView5.setAdapter(gridAdapter);
+        gridView2.setAdapter(gridAdapter2);
+        gridView3.setAdapter(gridAdapter3);
+        gridView4.setAdapter(gridAdapter4);
+        gridView5.setAdapter(gridAdapter5);
 
         gridView.setOnItemClickListener(new OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                onGridClick(parent, view, position, "a");
+            }
+        });
 
-                parentGridView = parent;
+        gridView2.setOnItemClickListener(new OnItemClickListener() {
 
-                ImageItem item = (ImageItem) parent.getItemAtPosition(position);
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                onGridClick(parent, view, position, "m");
+            }
+        });
 
-                TextView counterZone = (TextView) parent.getChildAt(position).findViewById(R.id.counter);
+        gridView3.setOnItemClickListener(new OnItemClickListener() {
 
-                long viewId = view.getId();
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                onGridClick(parent, view, position, "d");
+            }
+        });
 
-                if (viewId == R.id.infoButton) {
-                    //Create intent
-                    Intent intent = new Intent(Command.this, DetailsActivity.class);
-                    intent.putExtra("title", item.getTitle());
-                    intent.putExtra("image", item.getImage());
+        gridView4.setOnItemClickListener(new OnItemClickListener() {
 
-                    //Start details activity
-                    startActivity(intent);
-                } else if (viewId == R.id.image || viewId == R.id.text) {
-                    int counter = Integer.parseInt((String) counterZone.getText());
-                    counter++;
-                    counterZone.setText(String.valueOf(counter));
-                    counterZone.setVisibility(View.VISIBLE);
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                onGridClick(parent, view, position, "b");
+            }
+        });
 
-                    fillCart(position, counter);
+        gridView5.setOnItemClickListener(new OnItemClickListener() {
 
-                    //Toast.makeText(Command.this, "image!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(Command.this, "Else!", Toast.LENGTH_SHORT).show();
-                }
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                onGridClick(parent, view, position, "t");
             }
         });
 
@@ -131,23 +144,43 @@ public class Command extends AppCompatActivity {
         });
     }
 
-    class RetrieveData extends AsyncTask<String,String,ArrayList<ImageItem>> {
+    private void onGridClick(AdapterView<?> parent, View view, int position, String type) {
 
-        @Override
-        protected ArrayList<ImageItem> doInBackground(String... arg0) {
-            return getData(0);
-        }
+        parentGridView = parent;
 
-        protected void onPostExecute(ArrayList<ImageItem> result) {
-            gridAdapter = new GridViewAdapter(Command.this, R.layout.grid_item_layout, result);
+        ImageItem item = (ImageItem) parent.getItemAtPosition(position);
+
+        TextView counterZone = (TextView) parent.getChildAt(position).findViewById(R.id.counter);
+
+        long viewId = view.getId();
+
+        if (viewId == R.id.infoButton) {
+            //Create intent
+            Intent intent = new Intent(Command.this, DetailsActivity.class);
+            intent.putExtra("title", item.getTitle());
+            intent.putExtra("image", item.getImage());
+
+            //Start details activity
+            startActivity(intent);
+        } else if (viewId == R.id.image || viewId == R.id.text) {
+            int counter = Integer.parseInt((String) counterZone.getText());
+            counter++;
+            counterZone.setText(String.valueOf(counter));
+            counterZone.setVisibility(View.VISIBLE);
+
+            fillCart(position, counter, type);
+
+            //Toast.makeText(Command.this, "image!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(Command.this, "Else!", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void fillCart(int elementPosition, int commandCount) {
-        ImageItem item = getData(commandCount).get(elementPosition);
+    private void fillCart(int elementPosition, int commandCount, String type) {
+        ImageItem item = getData(commandCount, type).get(elementPosition);
         data.add(item);
         gridAdapterMyCommand = new GridViewMyCommandAdapter(Command.this, R.layout.grid_mycommand_element, data);
-        if (inCart(elementPosition, commandCount)) {
+        if (inCart(elementPosition, commandCount, type)) {
             gridAdapterMyCommand.dataGetter().remove(POS);
         }
         gridViewMyCommand.setAdapter(gridAdapterMyCommand);
@@ -160,10 +193,23 @@ public class Command extends AppCompatActivity {
         return res;
     }
 
-    private void decrementCounter(String itemtag, int counter) {
-        for (int i = 0; i < gridAdapter.dataGetter().size(); i++) {
-            if (itemtag.equals(gridAdapter.dataGetter().get(i).getTag())) {
-                gridAdapter.dataGetter().get(i).setCounter(counter);
+    private void decrementCounter(String itemTag, int counter) {
+        Toast.makeText(Command.this, "itemTag="+itemTag, Toast.LENGTH_SHORT).show();
+        GridViewAdapter myGridAdapter = null;
+        if (itemTag.startsWith("a"))
+            myGridAdapter = gridAdapter;
+        else if (itemTag.startsWith("m"))
+            myGridAdapter = gridAdapter2;
+        else if (itemTag.startsWith("d"))
+            myGridAdapter = gridAdapter3;
+        else if (itemTag.startsWith("b"))
+            myGridAdapter = gridAdapter4;
+        else if (itemTag.startsWith("t"))
+            myGridAdapter = gridAdapter2;
+
+        for (int i = 0; i < myGridAdapter.dataGetter().size(); i++) {
+            if (itemTag.equals(myGridAdapter.dataGetter().get(i).getTag())) {
+                myGridAdapter.dataGetter().get(i).setCounter(counter);
                 TextView counterZoneInPosition = (TextView) parentGridView.getChildAt(i).findViewById(R.id.counter);
                 counterZoneInPosition.setText(String.valueOf(counter));
 
@@ -177,8 +223,8 @@ public class Command extends AppCompatActivity {
     }
 
     private int POS = -1;
-    private boolean inCart(int elementPosition, int commandCount) {
-        String itemTag = getData(commandCount).get(elementPosition).getTag();
+    private boolean inCart(int elementPosition, int commandCount, String type) {
+        String itemTag = getData(commandCount, type).get(elementPosition).getTag();
         int exist = 0;
         for (int i = 0; i < gridAdapterMyCommand.dataGetter().size(); i++)
             if (itemTag.equals(gridAdapterMyCommand.dataGetter().get(i).getTag())) {
@@ -194,15 +240,57 @@ public class Command extends AppCompatActivity {
     /**
      * Prepare some dummy data for gridview
      */
-    private ArrayList<ImageItem> getData(int counter) {
-        final ArrayList<ImageItem> imageItems = new ArrayList<>();
+    private ArrayList<ImageItem> getData(int counter, String type) {
+        final ArrayList<ImageItem> imageItemsAppetizers = new ArrayList<>();
+        final ArrayList<ImageItem> imageItemsMains = new ArrayList<>();
+        final ArrayList<ImageItem> imageItemsDesserts = new ArrayList<>();
+        final ArrayList<ImageItem> imageItemsBeverages = new ArrayList<>();
+        final ArrayList<ImageItem> imageItemsTeasCoffes = new ArrayList<>();
+        final ArrayList<ImageItem> imageItemsAll = new ArrayList<>();
+
         TypedArray imgs = getResources().obtainTypedArray(R.array.image_ids);
+
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
             bitmap = ImageConverter.getRoundedCornerBitmap(bitmap, 20.0f);
-            imageItems.add(new ImageItem(bitmap, "Image#" + i, counter));
+            String imageName = ((String) imgs.getText(i)).substring(13);
+
+            if (type.equals("a") && imageName.startsWith(type)) {
+                imageItemsAppetizers.add(new ImageItem(bitmap, imageName, counter));
+
+            } else if (type.equals("m") && imageName.startsWith(type)) {
+                imageItemsMains.add(new ImageItem(bitmap, imageName, counter));
+
+            } else if (type.equals("d") && imageName.startsWith(type)) {
+                imageItemsDesserts.add(new ImageItem(bitmap, imageName, counter));
+
+            } else if (type.equals("b") && imageName.startsWith(type)) {
+                imageItemsBeverages.add(new ImageItem(bitmap, imageName, counter));
+
+            } else if (type.equals("t") && imageName.startsWith(type)) {
+                imageItemsTeasCoffes.add(new ImageItem(bitmap, imageName, counter));
+
+            } else {
+                imageItemsAll.add(new ImageItem(bitmap, imageName, counter));
+            }
         }
-        return imageItems;
+            if (type.equals("a"))
+                return imageItemsAppetizers;
+
+            else if (type.equals("m"))
+                return imageItemsMains;
+
+            else if (type.equals("d"))
+                return imageItemsDesserts;
+
+            else if (type.equals("b"))
+                return imageItemsBeverages;
+
+            else if (type.equals("t"))
+                return imageItemsTeasCoffes;
+
+            else
+                return imageItemsAll;
     }
 
     public void showAppetizers(View view) {
