@@ -33,7 +33,7 @@
         android:textColor="@color/red1"
         android:textSize="12sp"
         android:gravity="center"
-        android:visibility="invisible"
-        android:id="@+id/counter"/>
+        android:visibility="visible"
+        android:id="@+id/myCounter"/>
 
 </RelativeLayout>

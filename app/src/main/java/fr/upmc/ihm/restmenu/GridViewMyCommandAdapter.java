@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -26,6 +27,7 @@ public class GridViewMyCommandAdapter extends ArrayAdapter<ImageItem> {
     static class ViewHolder {
         ImageView image;
         ImageButton delateButton;
+        TextView counter;
     }
 
     public GridViewMyCommandAdapter(Context context, int layoutResourceId, ArrayList<ImageItem> data) {
@@ -33,6 +35,10 @@ public class GridViewMyCommandAdapter extends ArrayAdapter<ImageItem> {
         this.layoutResourceId = layoutResourceId;
         this.context = context;
         this.data = data;
+    }
+
+    public ArrayList<ImageItem> dataGetter() {
+        return this.data;
     }
 
     @Override
@@ -45,6 +51,7 @@ public class GridViewMyCommandAdapter extends ArrayAdapter<ImageItem> {
             holder = new ViewHolder();
             holder.image = (ImageView) row.findViewById(R.id.image);
             holder.delateButton = (ImageButton) row.findViewById(R.id.delateButton);
+            holder.counter = (TextView) row.findViewById(R.id.myCounter);
             row.setTag(holder);
         } else {
             holder = (ViewHolder) row.getTag();
@@ -52,6 +59,8 @@ public class GridViewMyCommandAdapter extends ArrayAdapter<ImageItem> {
 
         ImageItem item = data.get(position);
         holder.image.setImageBitmap(item.getImage());
+        holder.image.setTag(item.getTitle());
+        holder.counter.setText(item.getCounter());
 
         holder.image.setOnClickListener(new View.OnClickListener() {
 
