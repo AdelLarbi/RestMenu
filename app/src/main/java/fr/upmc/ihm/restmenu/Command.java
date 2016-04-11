@@ -29,6 +29,9 @@ public class Command extends AppCompatActivity {
     private GridViewMyCommandAdapter gridAdapterMyCommand;
     private ArrayList<ImageItem> data = new ArrayList<ImageItem>();
 
+    AdapterView<?> parentGridView;
+    AdapterView<?> parentGridViewMyCommand;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +48,9 @@ public class Command extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                parentGridView = parent;
+
                 ImageItem item = (ImageItem) parent.getItemAtPosition(position);
 
                 TextView counterZone = (TextView) parent.getChildAt(position).findViewById(R.id.counter);
@@ -73,19 +79,50 @@ public class Command extends AppCompatActivity {
                 }
             }
         });
+
+        gridViewMyCommand.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                parentGridViewMyCommand = parent;
+
+                ImageItem item = (ImageItem) parent.getItemAtPosition(position);
+
+                TextView counterZone = (TextView) parent.getChildAt(position).findViewById(R.id.myCounter);
+
+                long viewId = view.getId();
+
+                if (viewId == R.id.delateButton) {
+                    int counter = Integer.parseInt((String) counterZone.getText());
+                    String itemtag = gridAdapterMyCommand.dataGetter().get(position).getTag();
+                    if (counter > 1) {
+                        counter--;
+                        counterZone.setText(String.valueOf(counter));
+
+                        decrementCounter(itemtag, counter);
+
+                    } else {
+                        counter = 0;
+                        gridAdapterMyCommand.dataGetter().remove(position);
+                        gridViewMyCommand.setAdapter(gridAdapterMyCommand);
+                        decrementCounter(itemtag, counter);
+                    }
+                } else {
+                    Toast.makeText(Command.this, "Else!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     private void fillCart(int elementPosition, int commandCount) {
         ImageItem item = getData(commandCount).get(elementPosition);
-        //if (!inCart(elementPosition, commandCount)) {
         data.add(item);
         gridAdapterMyCommand = new GridViewMyCommandAdapter(Command.this, R.layout.grid_mycommand_element, data);
         if (inCart(elementPosition, commandCount)) {
             gridAdapterMyCommand.dataGetter().remove(POS);
         }
         gridViewMyCommand.setAdapter(gridAdapterMyCommand);
-
-        Toast.makeText(Command.this, "Exist = " + POS, Toast.LENGTH_SHORT).show();
     }
 
     private String print() {
@@ -94,6 +131,23 @@ public class Command extends AppCompatActivity {
             res += " " +gridAdapterMyCommand.dataGetter().get(i).getTag();
         return res;
     }
+
+    private void decrementCounter(String itemtag, int counter) {
+        for (int i = 0; i < gridAdapter.dataGetter().size(); i++) {
+            if (itemtag.equals(gridAdapter.dataGetter().get(i).getTag())) {
+                gridAdapter.dataGetter().get(i).setCounter(counter);
+                TextView counterZoneInPosition = (TextView) parentGridView.getChildAt(i).findViewById(R.id.counter);
+                counterZoneInPosition.setText(String.valueOf(counter));
+
+                if (counter == 0) {
+                    counterZoneInPosition.setVisibility(View.INVISIBLE);
+                }
+
+                break;
+            }
+        }
+    }
+
     private int POS = -1;
     private boolean inCart(int elementPosition, int commandCount) {
         String itemTag = getData(commandCount).get(elementPosition).getTag();
