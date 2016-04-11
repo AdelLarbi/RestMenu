@@ -84,14 +84,14 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/history"
+                    android:text="@string/historyLabel"
                     android:textSize="20sp"
                     android:id="@+id/txtv1" />
             </LinearLayout>
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="55dp"
                 android:layout_marginLeft="55dp">
@@ -109,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/gallery"
+                    android:text="@string/galleryLabel"
                     android:textSize="20sp"
                     android:id="@+id/txtv2" />
             </LinearLayout>
@@ -132,7 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/play"
+                    android:text="@string/playLabel"
                     android:textSize="20sp"
                     android:id="@+id/txtv3" />
             </LinearLayout>
@@ -163,14 +163,14 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/hours"
+                    android:text="@string/hoursLabel"
                     android:textSize="20sp"
                     android:id="@+id/txtv4" />
             </LinearLayout>
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="55dp"
                 android:layout_marginLeft="55dp">
@@ -188,7 +188,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/command"
+                    android:text="@string/commandLabel"
                     android:textSize="20sp"
                     android:id="@+id/txtv5" />
             </LinearLayout>
@@ -211,7 +211,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/contact"
+                    android:text="@string/contactLabel"
                     android:textSize="20sp"
                     android:id="@+id/txtv6" />
             </LinearLayout>

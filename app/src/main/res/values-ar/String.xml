@@ -24,12 +24,12 @@
     <string name="confirmTheCode">Confirmer le code secret</string>
 
     <!-- Home -->
-    <string name="historyLabel">Histoire</string>
-    <string name="galleryLabel">Language</string>
-    <string name="playLabel">Jouer</string>
-    <string name="hoursLabel">Horaires</string>
-    <string name="commandLabel">Commander</string>
-    <string name="contactLabel">Contacter</string>
+    <string name="historyLabel">من نحن</string>
+    <string name="galleryLabel">Langage</string>
+    <string name="playLabel">إلعب</string>
+    <string name="hoursLabel">ساعات العمل</string>
+    <string name="commandLabel">أطلب</string>
+    <string name="contactLabel">راسلنا</string>
     <string name="infoServerSecretCodeForgoten"><u>Code PIN oublié?</u></string>
 
     <!-- History -->
@@ -71,17 +71,6 @@
     <string name="beverages">Boissons</string>
     <string name="teasCoffes">Thés et Cafés</string>
     <string name="myCommand">Ma commande</string>
-    <string name="imageTitle">Poulet aux trois poivrons</string>
-    <string name="basicInfo"><b>Type</b> : Poulet aux trois poivrons\n
-                             <b>Catégorie</b> : plats\n
-                             <b>Energie</b> : 387 kcal\n
-                             <b>Matiéres</b> grasses : 7 g\n
-                             <b>Glucides</b> : 62 g\n
-                             <b>Fibres</b> : 10 g\n
-                             <b>Protéines</b> : 14 g\n
-                             <b>Sel</b> : 1 g\n</string>
-    <string name="moreInfo">Poulet aux trois poivrons est un mets de la cuisine italienne qui nécessite champignons, légumes. Il existe de nombreuses variantes.\nIngrédients : Outre le poulet, ce mets est réalisé à base de tomates, oignons, champignons, ail, poivrons (couleurs variées) et herbes de Provence (origan,thym, romarin). Certaines recettes, en plus du poivre, y ajoutent du paprika, d\'autres du persil, des câpres et des olives vertes et noires.</string>
-
     <string-array name="image_ids">
         <item>@drawable/a_image_1</item>
         <item>@drawable/a_image_2</item>

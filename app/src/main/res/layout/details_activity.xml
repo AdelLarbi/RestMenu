@@ -1,24 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#000">
-
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:scaleType="fitCenter" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="#00000c"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="45dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/imageTitle"
+        android:textSize="35sp"
+        android:textColor="@color/blue1"
+        android:id="@+id/txtvSettings" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp">
+
+        <TextView
+            android:layout_width="690dp"
+            android:layout_height="300dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="50dp"
+            android:padding="10dp"
+            android:textSize="29sp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/basicInfo"
+            android:background="@drawable/edit_text_style"
+            android:id="@+id/textvBasicInfo" />
+
+        <ImageView
+            android:layout_width="450dp"
+            android:layout_height="300dp"
+            android:padding="10dp"
+            android:layout_marginRight="40dp"
+            android:src="@drawable/b_image_9"
+            android:background="@drawable/edit_text_style"
+            android:id="@+id/imageInfo"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="1190dp"
+        android:layout_height="240dp"
+        android:layout_marginLeft="40dp"
         android:padding="10dp"
-        android:textColor="#fff"
-        android:textSize="20dp" />
-</FrameLayout>
+        android:textSize="29sp"
+        android:background="@drawable/edit_text_style"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/moreInfo"
+        android:id="@+id/textvMoreInfo" />
+</LinearLayout>

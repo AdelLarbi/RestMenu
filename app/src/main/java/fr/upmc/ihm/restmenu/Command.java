@@ -169,8 +169,8 @@ public class Command extends AppCompatActivity {
         if (viewId == R.id.infoButton) {
             //Create intent
             Intent intent = new Intent(Command.this, DetailsActivity.class);
-            intent.putExtra("title", item.getTitle());
-            intent.putExtra("image", item.getImage());
+            //intent.putExtra("title", item.getTitle());
+            //intent.putExtra("image", item.getImage());
 
             //Start details activity
             startActivity(intent);
@@ -219,7 +219,7 @@ public class Command extends AppCompatActivity {
         else if (itemTag.startsWith("b"))
             myGridAdapter = gridAdapter4;
         else if (itemTag.startsWith("t"))
-            myGridAdapter = gridAdapter2;
+            myGridAdapter = gridAdapter5;
 
         for (int i = 0; i < myGridAdapter.dataGetter().size(); i++) {
             if (itemTag.equals(myGridAdapter.dataGetter().get(i).getTag())) {

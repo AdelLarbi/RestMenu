@@ -2,21 +2,40 @@ package fr.upmc.ihm.restmenu;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 
 public class Home extends AppCompatActivity {
+
+    private  TextView histoire;
+    private  TextView langage;
+    private  TextView jouer;
+    private  TextView horaires;
+    private  TextView commander;
+    private  TextView contacter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+
+        histoire = (TextView) findViewById(R.id.txtv1);
+        langage = (TextView) findViewById(R.id.txtv2);
+        jouer = (TextView) findViewById(R.id.txtv3);
+        horaires = (TextView) findViewById(R.id.txtv4);
+        commander = (TextView) findViewById(R.id.txtv5);
+        contacter = (TextView) findViewById(R.id.txtv6);
     }
 
     @Override
@@ -38,7 +57,7 @@ public class Home extends AppCompatActivity {
         final Dialog dialog = new Dialog(Home.this);
         dialog.setContentView(R.layout.custom_dialog);
         // Custom Android Allert Dialog Title
-        dialog.setTitle("Custom Dialog Example");
+        //dialog.setTitle("Code secret du serveur");
 
         Button dialogButtonCancel = (Button) dialog.findViewById(R.id.customDialogCancel);
         Button dialogButtonOk = (Button) dialog.findViewById(R.id.customDialogOk);
@@ -71,8 +90,38 @@ public class Home extends AppCompatActivity {
     }
 
     public void selectGallery(View view) {
-        Intent intent = new Intent(this, Gallery.class);
-        startActivity(intent);
+        if (langage.getText().equals("Language")) {
+
+            histoire.setText("History");
+            langage.setText("لغة");
+            jouer.setText("Play");
+            horaires.setText("Hours");
+            commander.setText("Command");
+            contacter.setText("Contact");
+
+        } else if (langage.getText().equals("لغة")) {
+
+            histoire.setText("من نحن");
+            langage.setText("Langage");
+            jouer.setText("لعب");
+            horaires.setText("ساعات العمل");
+            commander.setText("أطلب");
+            contacter.setText("إتصل بنا");
+
+        } else if (langage.getText().equals("Langage")) {
+
+            histoire.setText("Histoire");
+            langage.setText("Language");
+            jouer.setText("Jouer");
+            horaires.setText("Horaires");
+            commander.setText("Commander");
+            contacter.setText("Contacter");
+        }
+        /*Locale locale = new Locale("ar");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        this.getApplicationContext().getResources().updateConfiguration(config, null);*/
     }
 
     public void selectGames(View view) {
