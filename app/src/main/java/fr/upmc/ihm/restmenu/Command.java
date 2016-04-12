@@ -1,7 +1,6 @@
 package fr.upmc.ihm.restmenu;
 
-import android.app.Dialog;
-import android.content.Context;
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -12,24 +11,27 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.security.PrivateKey;
 import java.util.ArrayList;
 
 public class Command extends AppCompatActivity {
 
     private TextView priceZone;
+    private LinearLayout shadaw;
+    RelativeLayout.LayoutParams params;
 
     private GridView gridView;
     private GridView gridView2;
@@ -45,6 +47,16 @@ public class Command extends AppCompatActivity {
     private GridViewAdapter gridAdapter4;
     private GridViewAdapter gridAdapter5;
 
+    private Button button;
+    private Button button2;
+    private Button button3;
+    private Button button4;
+    private Button button5;
+    private Button button6;
+
+    Drawable drawable;
+    Drawable drawable2;
+
     private GridViewMyCommandAdapter gridAdapterMyCommand;
     private ArrayList<ImageItem> data = new ArrayList<ImageItem>();
 
@@ -59,6 +71,18 @@ public class Command extends AppCompatActivity {
         setContentView(R.layout.command);
 
         priceZone = (TextView) findViewById(R.id.globalPrice);
+        shadaw = (LinearLayout) findViewById(R.id.shadaw_hidden);
+        params = (RelativeLayout.LayoutParams)shadaw.getLayoutParams();
+
+        button = (Button) findViewById(R.id.button);
+        button2 = (Button) findViewById(R.id.button2);
+        button3 = (Button) findViewById(R.id.button3);
+        button4 = (Button) findViewById(R.id.button4);
+        button5 = (Button) findViewById(R.id.button5);
+        button6 = (Button) findViewById(R.id.button6);
+
+        drawable = getResources().getDrawable(R.drawable.command_bottom);
+        drawable2 = getResources().getDrawable(R.drawable.command_bottom2);
 
         gridView = (GridView) findViewById(R.id.gridView);
         gridView2 = (GridView) findViewById(R.id.gridView2);
@@ -310,87 +334,101 @@ public class Command extends AppCompatActivity {
                 return imageItemsAll;
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void showAppetizers(View view) {
+        params.setMargins(0, 0, 0, 0);
+        shadaw.setLayoutParams(params);
+
+        button.setBackground(drawable);
+        button2.setBackground(drawable2);
+        button3.setBackground(drawable2);
+        button4.setBackground(drawable2);
+        button5.setBackground(drawable2);
+        button6.setBackground(drawable2);
+
         gridView.setVisibility(View.VISIBLE);
-
         gridView2.setVisibility(View.INVISIBLE);
         gridView3.setVisibility(View.INVISIBLE);
         gridView4.setVisibility(View.INVISIBLE);
         gridView5.setVisibility(View.INVISIBLE);
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void showMains(View view) {
+        params.setMargins(160, 0, 0, 0);
+        shadaw.setLayoutParams(params);
+
+        button2.setBackground(drawable);
+        button.setBackground(drawable2);
+        button3.setBackground(drawable2);
+        button4.setBackground(drawable2);
+        button5.setBackground(drawable2);
+        button6.setBackground(drawable2);
+
         gridView2.setVisibility(View.VISIBLE);
-
         gridView.setVisibility(View.INVISIBLE);
         gridView3.setVisibility(View.INVISIBLE);
         gridView4.setVisibility(View.INVISIBLE);
         gridView5.setVisibility(View.INVISIBLE);
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void showDesserts(View view) {
+        params.setMargins(320, 0, 0, 0);
+        shadaw.setLayoutParams(params);
+
+        button3.setBackground(drawable);
+        button.setBackground(drawable2);
+        button2.setBackground(drawable2);
+        button4.setBackground(drawable2);
+        button5.setBackground(drawable2);
+        button6.setBackground(drawable2);
+
         gridView3.setVisibility(View.VISIBLE);
-
         gridView.setVisibility(View.INVISIBLE);
         gridView2.setVisibility(View.INVISIBLE);
         gridView4.setVisibility(View.INVISIBLE);
         gridView5.setVisibility(View.INVISIBLE);
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void showBeverages(View view) {
-        gridView4.setVisibility(View.VISIBLE);
+        params.setMargins(480, 0, 0, 0);
+        shadaw.setLayoutParams(params);
 
+        button4.setBackground(drawable);
+        button.setBackground(drawable2);
+        button2.setBackground(drawable2);
+        button3.setBackground(drawable2);
+        button5.setBackground(drawable2);
+        button6.setBackground(drawable2);
+
+        gridView4.setVisibility(View.VISIBLE);
         gridView.setVisibility(View.INVISIBLE);
         gridView2.setVisibility(View.INVISIBLE);
         gridView3.setVisibility(View.INVISIBLE);
         gridView5.setVisibility(View.INVISIBLE);
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void showTeasCoffes(View view) {
-        gridView5.setVisibility(View.VISIBLE);
+        params.setMargins(640, 0, 0, 0);
+        shadaw.setLayoutParams(params);
 
+        button5.setBackground(drawable);
+        button.setBackground(drawable2);
+        button2.setBackground(drawable2);
+        button3.setBackground(drawable2);
+        button4.setBackground(drawable2);
+        button6.setBackground(drawable2);
+
+        gridView5.setVisibility(View.VISIBLE);
         gridView.setVisibility(View.INVISIBLE);
         gridView2.setVisibility(View.INVISIBLE);
         gridView3.setVisibility(View.INVISIBLE);
         gridView4.setVisibility(View.INVISIBLE);
     }
-
-    /*
-    @Override
-    public void onBackPressed() {
-        Log.i("Pressed", "---------------------");
-        moveTaskToBack(false);
-        // custom dialog
-        final Dialog dialog = new Dialog(Command.this);
-        dialog.setContentView(R.layout.custom_dialog);
-        // Custom Android Allert Dialog Title
-        dialog.setTitle("Custom Dialog Example");
-
-        Button dialogButtonCancel = (Button) dialog.findViewById(R.id.customDialogCancel);
-        Button dialogButtonOk = (Button) dialog.findViewById(R.id.customDialogOk);
-        // Click cancel to dismiss android custom dialog box
-        dialogButtonCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-        // Your android custom dialog ok action
-        // Action for custom dialog ok button click
-        dialogButtonOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-                moveTaskToBack(true);
-            }
-        });
-
-        dialog.show();
-    }
-*/
 }
-
 
 class ImageConverter {
 

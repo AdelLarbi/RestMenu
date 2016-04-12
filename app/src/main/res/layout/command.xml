@@ -84,7 +84,7 @@
             android:gravity="center"
             android:numColumns="auto_fit"
             android:horizontalSpacing="15dp"
-            android:verticalSpacing="15dp"
+            android:verticalSpacing="5dp"
             android:stretchMode="columnWidth"
             android:focusable="true"
             android:clickable="true"
@@ -102,7 +102,7 @@
             android:gravity="center"
             android:numColumns="auto_fit"
             android:horizontalSpacing="15dp"
-            android:verticalSpacing="15dp"
+            android:verticalSpacing="5dp"
             android:stretchMode="columnWidth"
             android:focusable="true"
             android:clickable="true"
@@ -120,7 +120,7 @@
             android:gravity="center"
             android:numColumns="auto_fit"
             android:horizontalSpacing="15dp"
-            android:verticalSpacing="15dp"
+            android:verticalSpacing="5dp"
             android:stretchMode="columnWidth"
             android:focusable="true"
             android:clickable="true"
@@ -138,7 +138,7 @@
             android:gravity="center"
             android:numColumns="auto_fit"
             android:horizontalSpacing="15dp"
-            android:verticalSpacing="15dp"
+            android:verticalSpacing="5dp"
             android:stretchMode="columnWidth"
             android:focusable="true"
             android:clickable="true"
@@ -151,15 +151,32 @@
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             android:padding="10dp"
+            android:columnWidth="136dp"
             android:drawSelectorOnTop="true"
             android:gravity="center"
             android:numColumns="auto_fit"
+            android:horizontalSpacing="15dp"
+            android:verticalSpacing="5dp"
             android:stretchMode="columnWidth"
             android:focusable="true"
             android:clickable="true"
             android:visibility="invisible"
             android:background="@drawable/command_middle"/>
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/shadaw_layout"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="150dp"
+            android:layout_height="10dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/shadaw_hidden"
+            android:id="@+id/shadaw_hidden"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -188,7 +205,7 @@
             android:text="@string/mains"
             android:textColor="@color/white2"
             android:textSize="17dp"
-            android:background="@drawable/command_bottom"
+            android:background="@drawable/command_bottom2"
             android:onClick="showMains"
             android:id="@+id/button2" />
 
@@ -199,7 +216,7 @@
             android:text="@string/desserts"
             android:textColor="@color/white2"
             android:textSize="17dp"
-            android:background="@drawable/command_bottom"
+            android:background="@drawable/command_bottom2"
             android:onClick="showDesserts"
             android:id="@+id/button3" />
 
@@ -210,7 +227,7 @@
             android:text="@string/beverages"
             android:textColor="@color/white2"
             android:textSize="17dp"
-            android:background="@drawable/command_bottom"
+            android:background="@drawable/command_bottom2"
             android:onClick="showBeverages"
             android:id="@+id/button4" />
 
@@ -221,7 +238,7 @@
             android:text="@string/teasCoffes"
             android:textColor="@color/white2"
             android:textSize="17dp"
-            android:background="@drawable/command_bottom"
+            android:background="@drawable/command_bottom2"
             android:onClick="showTeasCoffes"
             android:id="@+id/button5" />
 
@@ -232,7 +249,7 @@
             android:text="@string/myCommand"
             android:textColor="@color/white2"
             android:textSize="17dp"
-            android:background="@drawable/command_bottom"
+            android:background="@drawable/command_bottom2"
             android:id="@+id/button6" />
     </LinearLayout>
 
