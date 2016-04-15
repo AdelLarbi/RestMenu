@@ -12,7 +12,7 @@
     <!-- Table -->
     <string name="table">Numéro de la table</string>
     <string name="setTableNbr">Le numéro de la table</string>
-    <string name="selectTableNbrFromTo">Une table de 1 à 20</string>
+    <string name="selectTableNbrFromTo">Une table de 1 à 15</string>
     <string name="CancelTableNbr">Annuler</string>
     <string name="ScanQr">QR Code</string>
     <string name="OkTableNbr">Ok</string>
@@ -24,6 +24,7 @@
     <string name="confirmTheCode">Confirmer le code secret</string>
 
     <!-- Home -->
+    <string name="welcome">Bienvenue</string>
     <string name="historyLabel">Histoire</string>
     <string name="galleryLabel">Language</string>
     <string name="playLabel">Jouer</string>
@@ -40,12 +41,12 @@
     <string name="ourPassions">Nos passions</string>
     <string name="international">International</string>
     <string name="partnerships">Partenariats</string>
-    <string name="ourHistorySummary">Bla bla bla...</string>
-    <string name="ourTeamSummary">Bla bla bla...</string>
-    <string name="cookBookSummary">Bla bla bla...</string>
-    <string name="ourPassionsSummary">Bla bla bla...</string>
-    <string name="internationalSummary">Bla bla bla...</string>
-    <string name="partnershipsSummary">Bla bla bla...</string>
+    <string name="ourHistorySummary">Depuis 1930...</string>
+    <string name="ourTeamSummary">Une équipe de 15 professionnel</string>
+    <string name="cookBookSummary">2 livres</string>
+    <string name="ourPassionsSummary">la restauration c\'est notre passion</string>
+    <string name="internationalSummary">13 restaurants partout dans le monde</string>
+    <string name="partnershipsSummary">NRJ, BNP...</string>
 
     <!-- Gallery -->
     <string name="gallery">Galerie</string>
@@ -98,9 +99,6 @@
         <item>@drawable/a_image_13</item>
         <item>@drawable/a_image_14</item>
         <item>@drawable/a_image_15</item>
-        <item>@drawable/a_image_16</item>
-        <item>@drawable/a_image_17</item>
-        <item>@drawable/a_image_18</item>
         <item>@drawable/m_image_1</item>
         <item>@drawable/m_image_2</item>
         <item>@drawable/m_image_3</item>
@@ -139,6 +137,9 @@
     <string name="adress">8 Résidance de bla bla bla 75000 Paris</string>
     <string name="phone">(+33) 77 88 99 11</string>
     <string name="email">rest_mail@gmail.com</string>
+
+    <string name="passCommand">Confirmation</string>
+    <string name="infoPassCommand">voulez vous passer cette commande?</string>
 
     <string name="title_activity_table_selector">TableSelector</string>
     <string name="title_activity_secret_code">secretCode</string>

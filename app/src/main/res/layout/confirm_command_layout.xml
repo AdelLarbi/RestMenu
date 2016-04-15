@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="45dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/passCommand"
+        android:textSize="35sp"
+        android:textColor="@color/blue1"
+        android:id="@+id/txtvSecretCode" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/infoPassCommand"
+        android:textSize="24sp"
+        android:id="@+id/txtvInfoSecretCodeForgoten" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:paddingBottom="30dp"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="150dp"
+            android:text="@string/CancelTableNbr"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:background="@drawable/button_style"
+            android:id="@+id/customDialogCancel" />
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="150dp"
+            android:text="@string/OkTableNbr"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:background="@drawable/button_style"
+            android:id="@+id/customDialogOk" />
+    </LinearLayout>
+</LinearLayout>

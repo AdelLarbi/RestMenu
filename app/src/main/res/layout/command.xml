@@ -234,7 +234,7 @@
         <Button
             android:layout_width="150dp"
             android:layout_height="match_parent"
-            android:layout_marginRight="300dp"
+            android:layout_marginRight="80dp"
             android:text="@string/teasCoffes"
             android:textColor="@color/white2"
             android:textSize="17dp"
@@ -242,15 +242,32 @@
             android:onClick="showTeasCoffes"
             android:id="@+id/button5" />
 
+
         <Button
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:text="@string/myCommand"
-            android:textColor="@color/white2"
-            android:textSize="17dp"
-            android:background="@drawable/command_bottom2"
-            android:id="@+id/button6" />
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="3dp"
+            android:text="@string/CancelTableNbr"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:background="@drawable/button_style"
+            android:onClick="cancelCommand"
+            android:id="@+id/doCommand" />
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="3dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:text="@string/command"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:onClick="doCommand"
+            android:background="@drawable/button_style"
+            android:id="@+id/cancelCommand" />
     </LinearLayout>
 
 </LinearLayout>

@@ -1,6 +1,7 @@
 package fr.upmc.ihm.restmenu;
 
 import android.annotation.TargetApi;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -15,6 +16,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -52,7 +54,6 @@ public class Command extends AppCompatActivity {
     private Button button3;
     private Button button4;
     private Button button5;
-    private Button button6;
 
     Drawable drawable;
     Drawable drawable2;
@@ -79,7 +80,6 @@ public class Command extends AppCompatActivity {
         button3 = (Button) findViewById(R.id.button3);
         button4 = (Button) findViewById(R.id.button4);
         button5 = (Button) findViewById(R.id.button5);
-        button6 = (Button) findViewById(R.id.button6);
 
         drawable = getResources().getDrawable(R.drawable.command_bottom);
         drawable2 = getResources().getDrawable(R.drawable.command_bottom2);
@@ -278,9 +278,6 @@ public class Command extends AppCompatActivity {
         return false;
     }
 
-    /**
-     * Prepare some dummy data for gridview
-     */
     private ArrayList<ImageItem> getData(int counter, String type) {
         final ArrayList<ImageItem> imageItemsAppetizers = new ArrayList<>();
         final ArrayList<ImageItem> imageItemsMains = new ArrayList<>();
@@ -334,6 +331,47 @@ public class Command extends AppCompatActivity {
                 return imageItemsAll;
     }
 
+
+    public void doCommand(View view) {
+        //Intent intent = new Intent(this, History.class);
+        //startActivity(intent);
+        Log.d("CDA", "onBackPressed Called");
+        // custom dialog
+        final Dialog dialog = new Dialog(Command.this);
+        dialog.setContentView(R.layout.confirm_command_layout);
+        // Custom Android Allert Dialog Title
+        //dialog.setTitle("Code secret du serveur");
+
+        Button dialogButtonCancel = (Button) dialog.findViewById(R.id.customDialogCancel);
+        Button dialogButtonOk = (Button) dialog.findViewById(R.id.customDialogOk);
+        // Click cancel to dismiss android custom dialog box
+        dialogButtonCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        // Your android custom dialog ok action
+        // Action for custom dialog ok button click
+        dialogButtonOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                //moveTaskToBack(true);
+                Intent intent = new Intent(Command.this, Home.class);
+                startActivity(intent);
+                Command.this.finish();
+            }
+        });
+
+        dialog.show();
+    }
+
+    public void cancelCommand(View view) {
+        Command.this.finish();
+    }
+
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void showAppetizers(View view) {
         params.setMargins(0, 0, 0, 0);
@@ -344,7 +382,6 @@ public class Command extends AppCompatActivity {
         button3.setBackground(drawable2);
         button4.setBackground(drawable2);
         button5.setBackground(drawable2);
-        button6.setBackground(drawable2);
 
         gridView.setVisibility(View.VISIBLE);
         gridView2.setVisibility(View.INVISIBLE);
@@ -363,7 +400,6 @@ public class Command extends AppCompatActivity {
         button3.setBackground(drawable2);
         button4.setBackground(drawable2);
         button5.setBackground(drawable2);
-        button6.setBackground(drawable2);
 
         gridView2.setVisibility(View.VISIBLE);
         gridView.setVisibility(View.INVISIBLE);
@@ -382,7 +418,6 @@ public class Command extends AppCompatActivity {
         button2.setBackground(drawable2);
         button4.setBackground(drawable2);
         button5.setBackground(drawable2);
-        button6.setBackground(drawable2);
 
         gridView3.setVisibility(View.VISIBLE);
         gridView.setVisibility(View.INVISIBLE);
@@ -401,7 +436,6 @@ public class Command extends AppCompatActivity {
         button2.setBackground(drawable2);
         button3.setBackground(drawable2);
         button5.setBackground(drawable2);
-        button6.setBackground(drawable2);
 
         gridView4.setVisibility(View.VISIBLE);
         gridView.setVisibility(View.INVISIBLE);
@@ -420,7 +454,6 @@ public class Command extends AppCompatActivity {
         button2.setBackground(drawable2);
         button3.setBackground(drawable2);
         button4.setBackground(drawable2);
-        button6.setBackground(drawable2);
 
         gridView5.setVisibility(View.VISIBLE);
         gridView.setVisibility(View.INVISIBLE);

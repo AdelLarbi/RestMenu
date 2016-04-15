@@ -8,15 +8,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="45dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/welcome"
+            android:textSize="35sp"
+            android:textColor="@color/blue1"
+            android:id="@+id/txtvWelcome" />
+
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="645dp"
             android:layout_height="360dp"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="75dp"
             android:layout_marginBottom="40dp"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
-            android:src="@drawable/image1" />
+            android:src="@drawable/image11" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -30,7 +42,7 @@
                 android:layout_marginLeft="230dp"
                 android:layout_marginRight="10dp"
                 android:onClick="goFacebook"
-                android:src="@android:drawable/ic_delete" />
+                android:src="@drawable/facebook" />
 
             <ImageView
                 android:id="@+id/imageTwitter"
@@ -38,14 +50,14 @@
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
                 android:onClick="goTwitter"
-                android:src="@android:drawable/ic_delete" />
+                android:src="@drawable/twitter" />
 
             <ImageView
                 android:id="@+id/imageInstagram"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:onClick="goInstagram"
-                android:src="@android:drawable/ic_delete" />
+                android:src="@drawable/instagram" />
         </LinearLayout>
 
     </LinearLayout>
@@ -75,7 +87,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:src="@android:drawable/ic_dialog_info"
+                    android:src="@drawable/history"
                     android:background="@drawable/round_image_button"
                     android:onClick="selectHistory"/>
 
@@ -100,7 +112,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:src="@android:drawable/ic_dialog_info"
+                    android:src="@drawable/language"
                     android:background="@drawable/round_image_button"
                     android:onClick="selectGallery"/>
 
@@ -123,7 +135,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:src="@android:drawable/ic_dialog_info"
+                    android:src="@drawable/play"
                     android:background="@drawable/round_image_button"
                     android:onClick="selectGames"/>
 
@@ -154,7 +166,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:src="@android:drawable/ic_dialog_info"
+                    android:src="@drawable/hours"
                     android:background="@drawable/round_image_button"
                     android:onClick="selectHours"/>
 
@@ -179,7 +191,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:src="@android:drawable/ic_dialog_info"
+                    android:src="@drawable/command"
                     android:background="@drawable/command_round_image_button"
                     android:onClick="selectCommand"/>
 
@@ -202,7 +214,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:src="@android:drawable/ic_dialog_info"
+                    android:src="@drawable/contact"
                     android:background="@drawable/round_image_button"
                     android:onClick="selectContact"/>
 

@@ -32,8 +32,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
-                android:src="@android:drawable/ic_dialog_info"
-                android:background="@drawable/square_image_button"
+                android:background="@drawable/coc"
                 android:tag="@string/clashOfClansPkg"
                 android:onClick="onGameClick"
                 android:id="@+id/clashOfClans"/>
@@ -60,8 +59,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
-                android:src="@android:drawable/ic_dialog_info"
-                android:background="@drawable/square_image_button"
+                android:background="@drawable/limbo"
                 android:tag="@string/limboPkg"
                 android:onClick="onGameClick"
                 android:id="@+id/limboIcon"/>
@@ -86,8 +84,8 @@
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
-                android:src="@android:drawable/ic_dialog_info"
-                android:background="@drawable/square_image_button"
+
+                android:background="@drawable/mine"
                 android:tag="@string/minecraftPkg"
                 android:onClick="onGameClick"
                 android:id="@+id/minecraftIcon"/>

@@ -18,6 +18,7 @@ import java.util.Locale;
 
 public class Home extends AppCompatActivity {
 
+    private  TextView welcome;
     private  TextView histoire;
     private  TextView langage;
     private  TextView jouer;
@@ -30,6 +31,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
+        welcome = (TextView) findViewById(R.id.txtvWelcome);
         histoire = (TextView) findViewById(R.id.txtv1);
         langage = (TextView) findViewById(R.id.txtv2);
         jouer = (TextView) findViewById(R.id.txtv3);
@@ -92,6 +94,7 @@ public class Home extends AppCompatActivity {
     public void selectGallery(View view) {
         if (langage.getText().equals("Language")) {
 
+            welcome.setText("Welcome");
             histoire.setText("History");
             langage.setText("لغة");
             jouer.setText("Play");
@@ -101,6 +104,7 @@ public class Home extends AppCompatActivity {
 
         } else if (langage.getText().equals("لغة")) {
 
+            welcome.setText("مرحبا");
             histoire.setText("من نحن");
             langage.setText("Langage");
             jouer.setText("لعب");
@@ -110,6 +114,7 @@ public class Home extends AppCompatActivity {
 
         } else if (langage.getText().equals("Langage")) {
 
+            welcome.setText("Bienvenue");
             histoire.setText("Histoire");
             langage.setText("Language");
             jouer.setText("Jouer");

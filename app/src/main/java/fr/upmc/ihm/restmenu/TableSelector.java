@@ -40,6 +40,7 @@ public class TableSelector extends AppCompatActivity {
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
 
                 // Handle successful scan
+                startActivity(new Intent(this, Home.class));
                 Log.i("TableSelector","Scan result: " + contents);
 
             } else if (resultCode == RESULT_CANCELED) {
